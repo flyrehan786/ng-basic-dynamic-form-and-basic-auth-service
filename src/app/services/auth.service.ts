@@ -16,7 +16,7 @@ export class AuthService {
   isLoggedIn() {
     return (localStorage.getItem('auth-token')) ? true : false;
   }
-  getDecodedToken() {}
+  getDecodedToken() { return localStorage.getItem('auth-token'); }
   logout() {
     localStorage.removeItem('auth-token');
   }

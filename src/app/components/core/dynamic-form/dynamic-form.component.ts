@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,9 +9,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DynamicFormComponent implements OnInit {
   @Input() formConfig: any; // Input property to receive form configuration
-  form: any = {};
+  public form: any = {};
 
-  constructor(private fb: FormBuilder, private _authService: AuthService) {}
+  constructor(private fb: FormBuilder, private _authService: AuthService, _renderer2: Renderer2) {}
 
   ngOnInit(): void {
     this.createForm();
