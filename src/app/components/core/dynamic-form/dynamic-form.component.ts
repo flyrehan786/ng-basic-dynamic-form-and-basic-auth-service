@@ -21,6 +21,9 @@ export class DynamicFormComponent implements OnInit {
     const group: any = {};
     this.formConfig.fields.forEach((field: any) => {
       const validators = [];
+      if(field.pattern !== '') {
+        validators.push(Validators.pattern(field.pattern))
+      }
       if (field.required) {
         validators.push(Validators.required);
       }

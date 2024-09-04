@@ -84,11 +84,12 @@
     >
       <div *ngIf="getFieldControl(field).errors?.required">
         This field is required.
+
       </div>
+      {{ getFieldControl(field).errors | json }}
     </div>
   </div>
   <hr class="col-md-3" />
   <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
-    Submit
   </button>
 </form>

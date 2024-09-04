@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
         label: 'Username',
         placeholder: 'Enter your username',
         required: true,
+        pattern: 'rehan'
       },
       {
         type: 'password',
